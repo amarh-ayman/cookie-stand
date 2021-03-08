@@ -32,9 +32,9 @@ let storeCookies = {
 
         this.TotalStores_Salary += totalSales; ///account every thing
         let tag = document.createElement('div');
-        tag.innerHTML = "Total Salary " + totalSales;
+        tag.innerHTML = "Total Cookies " + totalSales;
         element.appendChild(tag);
-        console.log("total salary  " + this.TotalStores_Salary)
+        //console.log("total salary  " + this.TotalStores_Salary)
         this.totalHourArrayFinal.push(totalHourArray); //// array for all hours for all stores , for later account the salary or custmor in specific hour
         hourSales = 0;
 
@@ -69,7 +69,7 @@ let storeCookies = {
     final_result() {
         let element = document.getElementById("final");
         let tag = document.createElement('div');
-        tag.innerHTML = "Total Salary for All Stores = " + this.TotalStores_Salary;
+        tag.innerHTML = "Total Cookies for All Stores = " + this.TotalStores_Salary;
         element.appendChild(tag);
     }
 }
