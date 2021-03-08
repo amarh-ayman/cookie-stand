@@ -1,0 +1,23 @@
+img {
+    margin-left: 20%;
+}
+
+body {
+    background-color: cornflowerblue;
+    font-family: 'Noto Serif', serif;
+}
+
+main {
+    margin-left: 25%;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+    color: brown;
+    margin-left: 25%;
+}
