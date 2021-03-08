@@ -5,25 +5,25 @@ var numberStores = ["Seattle", "Tokyo", "Dubai", "Paris", "Lima"];
 
 let storeCookies = {
 
-    totalHourArrayFinal: [],
-    TotalStores_Salary: 0,
-    RandomCustomers: function(min, max) {
-        var R_cutm = Math.floor((Math.random() * (max - min)) + min);
+    totalHourArrayFinal: [], ////array for every hours and for every loc , 2D array
+    TotalStores_Salary: 0, ////////for accounting every cookies per location
 
+    RandomCustomers: function(min, max) { ///////////Random Customer's
+        var R_cutm = Math.floor((Math.random() * (max - min)) + min);
         return R_cutm;
     },
 
 
     hourswork_custm: function(name, avgSales, minCustm, maxCustm, hourSales, totalSales) {
-        var totalHourArray = [];
-
+        var totalHourArray = []; ////////array for cookies / location , in one location 
+        //console.log("first   " + totalHourArray + "  lets c")
         let element = document.getElementById(name);
 
         for (i = 0; i < hoursOpen.length; i++) {
             hourSales = Math.floor(avgSales * this.RandomCustomers(minCustm, maxCustm));
 
             totalSales += hourSales; //// total salary in one store
-            totalHourArray.push(hourSales); ///array for all hours in one store 
+            totalHourArray.push(hourSales); ///array for all hours in one location 
 
             let tag = document.createElement('li');
             tag.innerHTML = hoursOpen[i] + " : " + hourSales + " Cookies";
@@ -34,9 +34,9 @@ let storeCookies = {
         let tag = document.createElement('div');
         tag.innerHTML = "Total Cookies " + totalSales;
         element.appendChild(tag);
-        //console.log("total salary  " + this.TotalStores_Salary)
+        // console.log(totalHourArray)
         this.totalHourArrayFinal.push(totalHourArray); //// array for all hours for all stores , for later account the salary or custmor in specific hour
-        hourSales = 0;
+
 
     },
     ///////////////////////not neccessary one 
