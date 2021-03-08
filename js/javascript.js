@@ -117,5 +117,5 @@ let Tokyo = new storeCookies.hourswork_custm('Tokyo', 1.2, 3, 24, 0, 0, []);
 let Dubai = new storeCookies.hourswork_custm('Dubai', 3.7, 11, 38, 0, 0, []);
 let Paris = new storeCookies.hourswork_custm('Paris', 2.3, 20, 38, 0, 0, []);
 let Lima = new storeCookies.hourswork_custm('Lima', 4.6, 2, 16, 0, 0, []);
-let ammam = new storeCookies.hourswork_custm('Amman', 5, 2, 16, 0, 0, []);
+//let ammam = new storeCookies.hourswork_custm('Amman', 5, 2, 16, 0, 0, []);
 footer();
