@@ -117,16 +117,22 @@ let footer = function() {
   tr.append(td);
   table.appendChild(tr);
 };
-
+let loc,average,minimum,maximum ;
 
 header();
-let loc=prompt('Location');
-let average=prompt('average');
-let minimum=prompt('minimum customer');
-let maximum=prompt('miximum customer');
+let askTheuserForMore=confirm('Do u want to add more location ?? if yes prepare your data ');
+while(askTheuserForMore){
+  loc=prompt('Location');
+  average=prompt('average');
+  minimum=prompt('minimum customer');
+  maximum=prompt('miximum customer');
 
-if(loc && average && minimum && maximum)
-  arrayForAllLocationsInfo.push([loc,average,minimum,maximum,0,0,[]]);
+  if(loc && average && minimum && maximum)
+    arrayForAllLocationsInfo.push([loc,average,minimum,maximum,0,0,[]]);
+  else alert('sorry u have missing data , Be careful');
+
+  askTheuserForMore=confirm('Do u want to add more location ?? if yes prepare your data ');
+}
 for (let i = 0; i < arrayForAllLocationsInfo.length; i++) {
   let newStoreForCookies = new StoreCookies(arrayForAllLocationsInfo[i]);
   newStoreForCookies.render();
