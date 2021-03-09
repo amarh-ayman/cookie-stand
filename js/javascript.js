@@ -121,11 +121,12 @@ let footer = function() {
 
 header();
 let loc=prompt('Location');
-let avreage=prompt('average');
+let average=prompt('average');
 let minimum=prompt('minimum customer');
-let miximum=prompt('miximum customer');
+let maximum=prompt('miximum customer');
 
-arrayForAllLocationsInfo.push([loc,avreage,minimum,miximum,0,0,[]]);
+if(loc && average && minimum && maximum)
+  arrayForAllLocationsInfo.push([loc,average,minimum,maximum,0,0,[]]);
 for (let i = 0; i < arrayForAllLocationsInfo.length; i++) {
   let newStoreForCookies = new StoreCookies(arrayForAllLocationsInfo[i]);
   newStoreForCookies.render();
