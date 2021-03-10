@@ -16,7 +16,7 @@ let article = document.createElement('article');
 headerTable.appendChild(article);
 
 let table = document.createElement('table');
-table.setAttribute('border', '5');
+table.setAttribute('border', '5' ,'solid');
 
 
 let header = function() {
@@ -54,13 +54,15 @@ let StoreCookies = function(array_loc) {
   this.hourSales = array_loc[4];
   this.totalSales = array_loc[5];
   this.totalHourArray = array_loc[6];
-  //////////////////////////////////////////////////////////////////////////
+};
 
 
-  this.randomCustomers = function() { ///////////Random Customer's
-    var R_cutm = Math.floor((Math.random() * (this.maxCustm - this.minCustm)) + this.minCustm);
-    return R_cutm;
-  };
+StoreCookies.prototype.randomCustomers = function() { ///////////Random Customer's
+  var R_cutm = Math.floor((Math.random() * (this.maxCustm - this.minCustm)) + this.minCustm);
+  return R_cutm;
+};
+
+StoreCookies.prototype.render = function() {
   let tr = document.createElement('tr'); ////for making record
   let td = document.createElement('td'); ////for cell's
   td.textContent = this.name; /////name of the cell
@@ -68,32 +70,28 @@ let StoreCookies = function(array_loc) {
   td.style.color = 'white';
   tr.append(td); ///put <td> value in <tr>
   ///////////////////////////////////////////////////////////
-  this.render = function() {
-    for (let i = 0; i < hoursOpen.length; i++) {
-      this.hourSales = Math.floor(this.avgSales * this.randomCustomers());
-      this.totalSales += this.hourSales; //// total salary in one store
-      this.totalHourArray.push(this.hourSales); ///array for all hours in one location
-      let td1 = document.createElement('td');
-      td1.textContent =this.hourSales;
-      td1.style.background = 'rgb(16, 180, 221)';
-      td1.style.color = 'white';
-      tr.append(td1);
-    }
-    let td2 = document.createElement('td');
-    td2.textContent =this.totalSales ;
-    td2.style.color = 'pink';
-    td2.style.background = 'blue';
-    tr.append(td2);
-    table.appendChild(tr);
-    this.totalHourArray.push(this.totalSales);
-    TotalStores_Salary += this.totalSales; ///account every thing
-    totalHourArrayFinal.push(this.totalHourArray); //// array for all hours for all stores , for later account the salary or custmor in specific hour
 
-  };
+  for (let i = 0; i < hoursOpen.length; i++) {
+    this.hourSales = Math.floor(this.avgSales * this.randomCustomers());
+    this.totalSales += this.hourSales; //// total salary in one store
+    this.totalHourArray.push(this.hourSales); ///array for all hours in one location
+    let td1 = document.createElement('td');
+    td1.textContent =this.hourSales;
+    td1.style.background = 'rgb(16, 180, 221)';
+    td1.style.color = 'white';
+    tr.append(td1);
+  }
+  let td2 = document.createElement('td');
+  td2.textContent =this.totalSales ;
+  td2.style.color = 'pink';
+  td2.style.background = 'blue';
+  tr.append(td2);
+  table.appendChild(tr);
+  this.totalHourArray.push(this.totalSales);
+  TotalStores_Salary += this.totalSales; ///account every thing
+  totalHourArrayFinal.push(this.totalHourArray); //// array for all hours for all stores , for later account the salary or custmor in specific hour
+
 };
-
-
-
 
 let footer = function() {
   let tr = document.createElement('tr');
@@ -117,9 +115,12 @@ let footer = function() {
   tr.append(td);
   table.appendChild(tr);
 };
+
+
 let loc,average,minimum,maximum ;
 
 header();
+
 let askTheuserForMore=confirm('Do u want to add more location ?? if yes prepare your data ');
 while(askTheuserForMore){
   loc=prompt('Location');
