@@ -1,8 +1,19 @@
 body {
-    background-color: cornflowerblue;
+    background-color: rgb(220, 139, 228);
     font-family: 'Noto Serif', serif;
 }
 
-span {
-    margin-left: 30%;
+main > div {
+    margin-left:10%;
+    margin-top: 5%;  
+   
+}
+
+fieldset {
+    border: 4px solid;
+    width: 20%;
+}
+
+fieldset>input {
+float: right;
 }

@@ -17,6 +17,9 @@ headerTable.appendChild(article);
 
 let table = document.createElement('table');
 table.setAttribute('border', '5' ,'solid');
+let trfotr = document.createElement('tr');
+
+let form=document.getElementById('Cookiesform');
 
 
 let header = function() {
@@ -93,36 +96,57 @@ StoreCookies.prototype.render = function() {
 
 };
 
+let contantOfTable=function(){
+  for (let i = 0; i < arrayForAllLocationsInfo.length; i++) {
+    let newStoreForCookies = new StoreCookies(arrayForAllLocationsInfo[i]);
+    newStoreForCookies.render();}
+};
+
 let footer = function() {
-  let tr = document.createElement('tr');
-  let td = document.createElement('td');
-  td.textContent = 'Totals';
-  tr.append(td);
+  let tdfotr = document.createElement('td');
+  tdfotr.textContent = 'Totals';
+  trfotr.append(tdfotr);
 
   for (let i = 0; i < hoursOpen.length; i++) {
     let finalTotal = 0;
     for (let y = 0; y < arrayForAllLocationsInfo.length; y++) {
       finalTotal = finalTotal + totalHourArrayFinal[y][i];
     }
-    td = document.createElement('td');
-    td.textContent = finalTotal;
-    tr.append(td);
+    tdfotr = document.createElement('td');
+    tdfotr.textContent = finalTotal;
+    trfotr.append(tdfotr);
   }
-  td = document.createElement('td');
-  td.textContent = TotalStores_Salary;
-  tr.style.color = 'pink';
-  tr.style.background = 'blue';
-  tr.append(td);
-  table.appendChild(tr);
+  tdfotr = document.createElement('td');
+  tdfotr.textContent = TotalStores_Salary;
+  trfotr.style.color = 'pink';
+  trfotr.style.background = 'blue';
+  trfotr.append(tdfotr);
+  table.appendChild(trfotr);
 };
 
 
+let addNewInstance=function(event){
+  event.preventDefault();
+  let locationByUser=event.target.Location.value;
+  let avgSalesByUser=parseInt(event.target.AvgSales.value);
+  let minSalesByUser=parseInt(event.target.MinSales.value);
+  let maxSalesByUser=parseInt(event.target.MaxSales.value);
+
+  arrayForAllLocationsInfo.push([locationByUser,avgSalesByUser,minSalesByUser,maxSalesByUser,0,0,[]]);
+  let newInstance=new StoreCookies(arrayForAllLocationsInfo[arrayForAllLocationsInfo.length-1]);
+  // trfotr.removeChild(tdfotr);
+  table.removeChild(trfotr);
+  trfotr.textContent='';
+  newInstance.render();
+  footer();
+};
+
+
+
+form.addEventListener('submit',addNewInstance);
 header();
-
-
-for (let i = 0; i < arrayForAllLocationsInfo.length; i++) {
-  let newStoreForCookies = new StoreCookies(arrayForAllLocationsInfo[i]);
-  newStoreForCookies.render();
-}
-
+contantOfTable();
 footer();
+
+
+
