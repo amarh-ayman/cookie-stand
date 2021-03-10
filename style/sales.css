@@ -4,12 +4,11 @@ body {
 }
 
 main > div {
-    margin-left:10%;
-    margin-top: 5%;  
-   
+    margin:5% 0 0 20%;
 }
 
 fieldset {
+    margin: auto;
     border: 4px solid;
     width: 20%;
 }
