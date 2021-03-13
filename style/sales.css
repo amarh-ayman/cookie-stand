@@ -3,8 +3,8 @@ body {
     font-family: 'Noto Serif', serif;
 }
 
-main > div {
-    margin:5% 0 0 20%;
+div {
+    margin: auto;
 }
 
 fieldset {

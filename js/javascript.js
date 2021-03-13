@@ -130,7 +130,7 @@ let addNewInstance=function(event){
   let locationByUser=event.target.Location.value;
   let avgSalesByUser=parseInt(event.target.AvgSales.value);
   let minSalesByUser=parseInt(event.target.MinSales.value);
-  let maxSalesByUser=parseInt(event.target.MaxSales.value);
+  let maxSalesByUser=parseFloat(event.target.MaxSales.value);
 
   arrayForAllLocationsInfo.push([locationByUser,avgSalesByUser,minSalesByUser,maxSalesByUser,0,0,[]]);
   let newInstance=new StoreCookies(arrayForAllLocationsInfo[arrayForAllLocationsInfo.length-1]);
@@ -142,11 +142,7 @@ let addNewInstance=function(event){
 };
 
 
-
 form.addEventListener('submit',addNewInstance);
 header();
 contantOfTable();
 footer();
-
-
-
