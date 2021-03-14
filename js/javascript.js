@@ -16,7 +16,8 @@ let article = document.createElement('article');
 headerTable.appendChild(article);
 
 let table = document.createElement('table');
-table.setAttribute('border', '5' ,'solid');
+table.setAttribute('border', '10' ,'solid');
+table.style.border='10px solid red ';
 let trfotr = document.createElement('tr');
 
 let form=document.getElementById('Cookiesform');
