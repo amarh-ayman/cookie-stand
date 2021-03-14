@@ -1,28 +1,134 @@
-img {
-    margin-left: 20%;
-}
-
 body {
-    background-color: cornflowerblue;
-    font-family: 'Noto Serif', serif;
+   margin: auto;
+   padding: auto;
 }
 
-main {
-    margin-left: 25%;
+h1{
+    float:right;
+    margin-right: 250px;
+    margin-top: -10px;
+    font-size: 100px;
+    color: green;
+}
+
+.first_img{
+    width: 20%;
+    float: left ;
+}
+.first_sec{
+    transform: translateY(-100px);
+    margin-left: 500px;
+    display: inline-block;
+
+}
+p{
+    border: 2px dotted green;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 20px;
+    font-size: 30px;
+}
+a {
+    text-decoration: none;
+    color: green;
+}
+.first_sec p:first-child{
+    background-color: yellow;
+}
+.first_sec p:nth-child(2){
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.first_sec p:last-child{
+    background-color: orange;
+    color:snow;
+}
+
+.fish_img{
+    width:10%;
+    float: right;
+    margin-right: 170px;
+    margin-top: -200px;
+   
+}
+.family_img p{
+    float: right;
+    margin-top: -30px;
+    transform: translateX(-300px);
+    background-color: red;
+    color: aliceblue;
+}
+.family_img img{
+    width: 30%;
+    transform: translateX(550px);
+    margin-top: 60px;
+    display: inline-block;
+}
+.shirt_img p{
+    float: left;
+    margin-top: 70px;
+    margin-left: 50px;
+    background-color: green;
+    color: aliceblue;
+}
+.shirt_img img {
+    width: 30%;
+    display: inline-block;
+    margin-top: -400px;
+    margin-left: -370px;
+}
+.cutter_img img {
+    width: 20%;
+    float: right;
+    margin-top: -300px;
+}
+
+.frosted_img img{
+    width: 10%;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: 350px;
+    display: inline-block;
+}
+.salmon_img_fotr p{
+    float: left;
+    margin-left: 250px;
+    margin-top: 80px;
+    color: aliceblue;
+    border: 5px dotted wheat;
+    font-size: 30px;
+    font-weight: bold;
+}
+.salmon_img_fotr {
+    width: 40%;
+    height: 300px;
+    float: left;
+    background-image: url(../image/salmon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.chinook_img_fotr p{
+    float: right;
+    margin-right: 150px;
+    margin-top: 90px;
+    color: aliceblue;
+    border: 5px dotted wheat;
+    font-size: 30px;
     font-weight: bold;
 }
 
-h1 {
-    font-size: 50px;
+.chinook_img_fotr {
+    width: 40%;
+    height: 300px;
+    float: right;
+    background-image: url(../image/chinook.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-h2 {
-    font-size: 30px;
-    color: brown;
-    margin-left: 25%;
-    color: rgb(201, 30, 144);
-}
-
-.salesTableLoc {
-    margin: 0 50% 30% 0;
+.cookies_fotr {
+    width: 15%;
+    display: inline-block;
+    margin-left: 50px;
 }
