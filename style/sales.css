@@ -7,12 +7,31 @@ div {
     margin: auto;
 }
 
+a{
+    border: 2px dotted green;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: green;
+    background-color: yellow;}
+
 fieldset {
     margin: auto;
-    border: 4px solid;
+    border: 10px solid ;
+    border-color: yellow green orange blue;
     width: 20%;
 }
 
+
 fieldset>input {
 float: right;
+}
+
+#headerTable{
+    border: 10px solid ;
+    border-color: yellow green orange blue;
+    width: 51.5%;
+    margin-top: 50px;
 }
